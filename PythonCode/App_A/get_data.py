@@ -28,7 +28,7 @@ def visualize_result(
     # 创建显示区域
     plt.figure()
     # 为了同时显示估计值和真值，设定为hold＝“on”
-    plt.hold("on")
+    #plt.hold("on")
     # x_0 vs y 的显示
     plt.subplot(211)
     plt.plot(X_test[:, 0], Y_test, "+", label="True")
@@ -183,8 +183,8 @@ def get_all(
     # 选择随机索引以确定学习/测试数据
     N = X.shape[0]
     perm_indices = np.random.permutation(range(N))
-    train = perm_indices[:N/2]  # 因为是整数，所以向下舍入
-    test = perm_indices[N/2:]
+    train = perm_indices[:N//2]  # 因为是整数，所以向下舍入
+    test = perm_indices[N//2:]
 
     # 是否作为系数矩阵返回
     if return_coefficient_matrix:
@@ -250,7 +250,6 @@ def main():
     plt.xlabel("x_0")
     plt.ylabel("x_1")
     plt.title("countour of f(x)")
-    plt.hold("on")
     plt.scatter(x_sample[:, 0], x_sample[:, 1], color="k", marker="+")
 
     plt.savefig("original_data.png")

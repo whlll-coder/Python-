@@ -1,0 +1,5 @@
+{
+    "linearity": "linear",
+    "dimension": 100,
+    "num_of_samples": 1000
+}
